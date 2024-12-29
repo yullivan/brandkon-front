@@ -21,7 +21,7 @@ const products = [
     imgSrc: '',
     productName: '아메리카노(Ice)(TAKE-OUT)',
     brandName: '컴포즈커피',
-    price: 10000,
+    price: 1500,
   },
 ];
 
