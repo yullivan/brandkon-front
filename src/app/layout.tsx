@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import Categories from '@/ui/categories';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,7 +33,11 @@ export default function RootLayout({
         }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div>
+          <div className="text-xl font-semibold">브랜드콘</div>
+          <Categories />
+        </div>
+        <div>{children}</div>
       </body>
     </html>
   );
