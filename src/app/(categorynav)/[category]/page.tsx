@@ -1,29 +1,18 @@
 import BrandLinks from '@/components/brand-links';
 import PopularProducts from '@/components/popular-product';
+import { fetchCategories } from '@/lib/api';
 import { brands, products } from '@/lib/data';
-
-const categoryNames: CategoryNames = {
-  cafe: '카페',
-  giftcard: '상품권',
-  chicken: '치킨',
-  'pizza-burger': '피자·버거',
-  'convenience-store': '편의점',
-  dining: '외식',
-  dessert: '디저트',
-};
-
-interface CategoryNames {
-  [key: string]: string;
-}
 
 export default async function Page({
   params,
 }: {
   params: Promise<{ category: string }>;
 }) {
-  const category = (await params).category;
-  const categoryName = categoryNames[category];
-  // const products = productsByCategory[category] ?? [];
+  const categorySlug = (await params).category;
+  const categoryName =
+    (await fetchCategories()).filter(
+      (category) => category.slug === categorySlug
+    )[0].name ?? '';
 
   return (
     <div>
