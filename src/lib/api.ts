@@ -103,3 +103,16 @@ export async function fetchPopularProducts({
   const data = await response.json();
   return data;
 }
+
+export async function fetchProductById(
+  productId: string
+): Promise<ProductDetailResponse> {
+  const response = await fetch(`${apiBaseUrl}/products/${productId}`);
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();
+  return data;
+}

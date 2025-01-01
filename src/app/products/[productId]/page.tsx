@@ -1,13 +1,14 @@
 import ProductToggle from '@/components/product-toggle';
-import { product } from '@/lib/data';
+import { fetchProductById } from '@/lib/api';
 import Link from 'next/link';
 
 export default async function Page({
   params,
 }: {
-  params: Promise<{ productId: number }>;
+  params: Promise<{ productId: string }>;
 }) {
   const productId = (await params).productId;
+  const product = await fetchProductById(productId);
   return (
     <div className="flex flex-col gap-3">
       <div>

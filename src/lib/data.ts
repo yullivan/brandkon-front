@@ -1,4 +1,4 @@
-import { ProductDetailResponse, ProductResponse } from './api';
+// import { ProductDetailResponse, ProductResponse } from './api';
 
 // const categories: CategoryResponse[] = [
 //   { name: '카페', slug: 'cafe', imageUrl: '/icons/cafe.png' },
@@ -73,25 +73,25 @@ import { ProductDetailResponse, ProductResponse } from './api';
 //   },
 // ];
 
-const product: ProductDetailResponse = {
-  productId: 1,
-  productName: '(ICE)아메리카노',
-  price: 2000,
-  brand: {
-    id: 1,
-    name: '메가MGC커피',
-    guidelines: `
-    사용처
-    - 전국 메가MGC커피 매장에서 사용 가능합니다.
-  
-    제한사항
-    - 사진은 이미지 컷이므로 실제와 다를 수 있습니다.
-  
-    유의사항
-    - *지급보증 : 본 상품은 별도의 지급보증 및 피해보상보험계약체결 없이 자체 신용으로 발행되었습니다.
-    `,
-  },
-  expirationDays: 366,
-};
+// const product: ProductDetailResponse = {
+//   productId: 1,
+//   productName: '(ICE)아메리카노',
+//   price: 2000,
+//   brand: {
+//     id: 1,
+//     name: '메가MGC커피',
+//     guidelines: `
+//     사용처
+//     - 전국 메가MGC커피 매장에서 사용 가능합니다.
 
-export { product };
+//     제한사항
+//     - 사진은 이미지 컷이므로 실제와 다를 수 있습니다.
+
+//     유의사항
+//     - *지급보증 : 본 상품은 별도의 지급보증 및 피해보상보험계약체결 없이 자체 신용으로 발행되었습니다.
+//     `,
+//   },
+//   expirationDays: 366,
+// };
+
+// export { product };
