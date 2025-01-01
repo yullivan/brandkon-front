@@ -14,7 +14,7 @@ export default function BrandLinks({ brands }: { brands: BrandResponse[] }) {
           <div className="flex gap-2">
             <div>
               <img
-                src="placeholder.jpg"
+                src={brand.imageUrl || '/placeholder.jpg'}
                 alt=""
                 width={30}
                 height={30}
