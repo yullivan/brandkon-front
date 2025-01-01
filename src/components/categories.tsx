@@ -1,23 +1,9 @@
 'use client';
 
+import { categories } from '@/lib/data';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const categories = [
-  { name: '추천', href: '/', imageSrc: '/icons/rec.png' },
-  { name: '카페', href: '/cafe', imageSrc: '/icons/cafe.png' },
-  { name: '상품권', href: '/giftcard', imageSrc: '/icons/giftcard.png' },
-  { name: '치킨', href: '/chicken', imageSrc: '/icons/chicken.png' },
-  { name: '피자·버거', href: '/pizza-burger', imageSrc: '/icons/pizza.png' },
-  {
-    name: '편의점',
-    href: '/convenience-store',
-    imageSrc: '/icons/convenience.png',
-  },
-  { name: '외식', href: '/dining', imageSrc: '/icons/dining.png' },
-  { name: '디저트', href: '/dessert', imageSrc: '/icons/dessert.png' },
-];
 
 export default function Categories() {
   const pathname = usePathname();

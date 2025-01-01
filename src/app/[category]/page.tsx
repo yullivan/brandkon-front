@@ -1,5 +1,5 @@
 import BrandLinks from '@/components/brand-links';
-import { brands } from '@/lib/data';
+import { brands, products } from '@/lib/data';
 
 const categoryNames: CategoryNames = {
   cafe: '카페',
@@ -15,37 +15,6 @@ interface CategoryNames {
   [key: string]: string;
 }
 
-const productsByCategory: ProductsByCategory = {
-  cafe: [
-    {
-      id: 1,
-      imgSrc: '',
-      productName: '(ICE)아메리카노',
-      brandName: '메가MGC커피',
-      price: 2000,
-    },
-    {
-      id: 3,
-      imgSrc: '',
-      productName: '아메리카노(Ice)(TAKE-OUT)',
-      brandName: '컴포즈커피',
-      price: 1500,
-    },
-  ],
-};
-
-interface ProductsByCategory {
-  [key: string]: Product[];
-}
-
-interface Product {
-  id: number;
-  imgSrc: string;
-  productName: string;
-  brandName: string;
-  price: number;
-}
-
 export default async function Page({
   params,
 }: {
@@ -53,7 +22,8 @@ export default async function Page({
 }) {
   const category = (await params).category;
   const categoryName = categoryNames[category];
-  const products = productsByCategory[category] ?? [];
+  // const products = productsByCategory[category] ?? [];
+
   return (
     <div>
       <div className="flex flex-col gap-2">
