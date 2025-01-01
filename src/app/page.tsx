@@ -1,4 +1,4 @@
-import ProductCard from '@/ui/product';
+import ProductCard from '@/components/product';
 import Link from 'next/link';
 
 const products = [

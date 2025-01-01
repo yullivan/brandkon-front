@@ -23,7 +23,7 @@ export default function Categories() {
   const pathname = usePathname();
 
   return (
-    <div className="grid grid-cols-4 gap-2">
+    <div className="grid grid-cols-4">
       {categories.map((category) => (
         <Link
           key={category.name}
