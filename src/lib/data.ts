@@ -1,4 +1,4 @@
-import { BrandResponse, ProductDetailResponse, ProductResponse } from './api';
+import { ProductDetailResponse, ProductResponse } from './api';
 
 // const categories: CategoryResponse[] = [
 //   { name: '카페', slug: 'cafe', imageUrl: '/icons/cafe.png' },
@@ -14,23 +14,23 @@ import { BrandResponse, ProductDetailResponse, ProductResponse } from './api';
 //   { name: '디저트', slug: 'dessert', imageUrl: '/icons/dessert.png' },
 // ];
 
-const brands: BrandResponse[] = [
-  {
-    brandId: 1,
-    brandName: '메가MGC커피',
-    imageUrl: '',
-  },
-  {
-    brandId: 2,
-    brandName: '배스킨라빈스',
-    imageUrl: '',
-  },
-  {
-    brandId: 3,
-    brandName: '스타벅스',
-    imageUrl: '',
-  },
-];
+// const brands: BrandResponse[] = [
+//   {
+//     id: 1,
+//     name: '메가MGC커피',
+//     imageUrl: 'icons/megacoffee.png',
+//   },
+//   {
+//     id: 2,
+//     name: '배스킨라빈스',
+//     imageUrl: '',
+//   },
+//   {
+//     id: 3,
+//     name: '스타벅스',
+//     imageUrl: '',
+//   },
+// ];
 
 const products: ProductResponse[] = [
   {
@@ -70,4 +70,4 @@ const product: ProductDetailResponse = {
   expirationDays: 366,
 };
 
-export { brands, products, product };
+export { products, product };

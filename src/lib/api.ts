@@ -5,8 +5,8 @@ export interface CategoryResponse {
 }
 
 export interface BrandResponse {
-  brandId: number;
-  brandName: string;
+  id: number;
+  name: string;
   imageUrl: string;
 }
 
@@ -33,6 +33,19 @@ export interface ProductDetailResponse {
 const apiBaseUrl = `http://localhost:8080`;
 export async function fetchCategories(): Promise<CategoryResponse[]> {
   const response = await fetch(`${apiBaseUrl}/categories`);
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+export async function fetchBrands(
+  categorySlug: string
+): Promise<BrandResponse[]> {
+  const response = await fetch(`${apiBaseUrl}/brands?category=${categorySlug}`);
 
   if (!response.ok) {
     throw new Error('Network response was not ok');

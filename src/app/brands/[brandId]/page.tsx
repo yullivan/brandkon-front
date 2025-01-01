@@ -11,15 +11,15 @@ export default async function Page({
 }) {
   const brandId = (await params).brandId;
   const brand: BrandResponse = {
-    brandId: 1,
-    brandName: '메가MGC커피',
+    id: 1,
+    name: '메가MGC커피',
     imageUrl: '',
   };
 
   return (
     <div>
-      <div>{brand.brandName}</div>
-      <PopularProducts name={brand.brandName} products={products} />
+      <div>{brand.name}</div>
+      <PopularProducts name={brand.name} products={products} />
       <div>
         <div>전체 상품</div>
         <div className="grid grid-cols-2">

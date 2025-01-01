@@ -2,12 +2,13 @@ import { BrandResponse } from '@/lib/api';
 import Link from 'next/link';
 
 export default function BrandLinks({ brands }: { brands: BrandResponse[] }) {
+  console.log(brands);
   return (
     <div className="flex flex-col gap-2">
       {brands.map((brand) => (
         <Link
-          key={brand.brandId}
-          href={`/brands/${brand.brandId}`}
+          key={brand.id}
+          href={`/brands/${brand.id}`}
           className="flex justify-between"
         >
           <div className="flex gap-2">
@@ -20,7 +21,7 @@ export default function BrandLinks({ brands }: { brands: BrandResponse[] }) {
                 className="rounded-full"
               />
             </div>
-            <div>{brand.brandName}</div>
+            <div>{brand.name}</div>
           </div>
           <div>{`>`}</div>
         </Link>
