@@ -1,24 +1,18 @@
-import {
-  BrandResponse,
-  CategoryResponse,
-  ProductDetailResponse,
-  ProductResponse,
-} from './api';
+import { BrandResponse, ProductDetailResponse, ProductResponse } from './api';
 
-const categories: CategoryResponse[] = [
-  { name: '추천', href: '/', imageSrc: '/icons/rec.png' },
-  { name: '카페', href: '/cafe', imageSrc: '/icons/cafe.png' },
-  { name: '상품권', href: '/giftcard', imageSrc: '/icons/giftcard.png' },
-  { name: '치킨', href: '/chicken', imageSrc: '/icons/chicken.png' },
-  { name: '피자·버거', href: '/pizza-burger', imageSrc: '/icons/pizza.png' },
-  {
-    name: '편의점',
-    href: '/convenience-store',
-    imageSrc: '/icons/convenience.png',
-  },
-  { name: '외식', href: '/dining', imageSrc: '/icons/dining.png' },
-  { name: '디저트', href: '/dessert', imageSrc: '/icons/dessert.png' },
-];
+// const categories: CategoryResponse[] = [
+//   { name: '카페', slug: 'cafe', imageUrl: '/icons/cafe.png' },
+//   { name: '상품권', slug: 'giftcard', imageUrl: '/icons/giftcard.png' },
+//   { name: '치킨', slug: 'chicken', imageUrl: '/icons/chicken.png' },
+//   { name: '피자·버거', slug: 'pizza-burger', imageUrl: '/icons/pizza.png' },
+//   {
+//     name: '편의점',
+//     slug: 'convenience-store',
+//     imageUrl: '/icons/convenience.png',
+//   },
+//   { name: '외식', slug: 'dining', imageUrl: '/icons/dining.png' },
+//   { name: '디저트', slug: 'dessert', imageUrl: '/icons/dessert.png' },
+// ];
 
 const brands: BrandResponse[] = [
   {
@@ -76,4 +70,4 @@ const product: ProductDetailResponse = {
   expirationDays: 366,
 };
 
-export { categories, brands, products, product };
+export { brands, products, product };
