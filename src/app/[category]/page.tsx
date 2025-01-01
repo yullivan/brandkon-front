@@ -1,4 +1,5 @@
 import BrandLinks from '@/components/brand-links';
+import PopularProducts from '@/components/popular-product';
 import { brands, products } from '@/lib/data';
 
 const categoryNames: CategoryNames = {
@@ -26,35 +27,7 @@ export default async function Page({
 
   return (
     <div>
-      <div className="flex flex-col gap-2">
-        <div className="font-semibold">{categoryName} 인기 상품</div>
-        <div className="flex flex-col gap-2">
-          {products.map((product, index) => (
-            <div key={index} className="flex gap-2">
-              <div>
-                <img
-                  src="/placeholder.jpg"
-                  alt=""
-                  width={100}
-                  height={100}
-                  className="rounded-lg"
-                />
-              </div>
-              <div className="flex flex-col justify-center">
-                <div className="text-sm text-blue-500 font-semibold">
-                  {index + 1}위
-                </div>
-                <div className="text-sm">
-                  {product.brandName} | {product.productName}
-                </div>
-                <div className="text-lg font-semibold">
-                  {product.price.toLocaleString()}원
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <PopularProducts name={categoryName} products={products} />
       <div className="flex flex-col gap-2 bg-gray-100 px-4">
         <div className="font-semibold">브랜드</div>
         <BrandLinks brands={brands} />
