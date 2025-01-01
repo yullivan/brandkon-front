@@ -17,3 +17,15 @@ export interface ProductResponse {
   brandName: string;
   price: number;
 }
+
+export interface ProductDetailResponse {
+  productId: number;
+  productName: string;
+  price: number;
+  expirationDays: number;
+  brand: {
+    id: number;
+    name: string;
+    guidelines: string;
+  };
+}
