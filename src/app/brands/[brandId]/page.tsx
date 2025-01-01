@@ -26,7 +26,7 @@ export default async function Page({
           {products.map((product) => (
             <Link href={`/products/${product.id}`} key={product.id}>
               <ProductCard
-                img={product.imgSrc}
+                img={product.imageUrl}
                 name={product.productName}
                 brand={product.brandName}
                 price={product.price}

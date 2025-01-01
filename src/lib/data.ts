@@ -32,17 +32,41 @@ import { ProductDetailResponse, ProductResponse } from './api';
 //   },
 // ];
 
+// const products = [
+//   {
+//     id: 1,
+//     imageUrl: '',
+//     productName: '(ICE)아메리카노',
+//     brandName: '메가MGC커피',
+//     price: 2000,
+//   },
+//   {
+//     id: 2,
+//     imageUrl: '',
+//     productName: '신세계이마트 1만원 상품권 교환권',
+//     brandName: '신세계 상품권',
+//     price: 10000,
+//   },
+//   {
+//     id: 3,
+//     imageUrl: '',
+//     productName: '아메리카노(Ice)(TAKE-OUT)',
+//     brandName: '컴포즈커피',
+//     price: 1500,
+//   },
+// ];
+
 const products: ProductResponse[] = [
   {
     id: 1,
-    imgSrc: '',
+    imageUrl: '',
     productName: '(ICE)아메리카노',
     brandName: '메가MGC커피',
     price: 2000,
   },
   {
     id: 3,
-    imgSrc: '',
+    imageUrl: '',
     productName: '아메리카노(Ice)(TAKE-OUT)',
     brandName: '컴포즈커피',
     price: 1500,

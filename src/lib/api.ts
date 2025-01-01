@@ -12,7 +12,7 @@ export interface BrandResponse {
 
 export interface ProductResponse {
   id: number;
-  imgSrc: string;
+  imageUrl: string;
   productName: string;
   brandName: string;
   price: number;
@@ -46,6 +46,21 @@ export async function fetchBrands(
   categorySlug: string
 ): Promise<BrandResponse[]> {
   const response = await fetch(`${apiBaseUrl}/brands?category=${categorySlug}`);
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+export async function fetchProducts(
+  brandId: number | null
+): Promise<ProductResponse[]> {
+  const response = await fetch(
+    `${apiBaseUrl}/products${brandId === null ? '' : `brandId=${brandId}`}`
+  );
 
   if (!response.ok) {
     throw new Error('Network response was not ok');

@@ -2,7 +2,6 @@ import { BrandResponse } from '@/lib/api';
 import Link from 'next/link';
 
 export default function BrandLinks({ brands }: { brands: BrandResponse[] }) {
-  console.log(brands);
   return (
     <div className="flex flex-col gap-2">
       {brands.map((brand) => (
