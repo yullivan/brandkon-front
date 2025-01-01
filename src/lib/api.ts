@@ -1,4 +1,5 @@
 export interface CategoryResponse {
+  id: number;
   name: string;
   slug: string;
   imageUrl: string;
@@ -55,12 +56,45 @@ export async function fetchBrands(
   return data;
 }
 
+export async function fetchBrandById(brandId: string): Promise<BrandResponse> {
+  const response = await fetch(`${apiBaseUrl}/brands/${brandId}`);
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();
+  return data;
+}
+
 export async function fetchProducts(
-  brandId: number | null
+  brandId: string | null
 ): Promise<ProductResponse[]> {
   const response = await fetch(
-    `${apiBaseUrl}/products${brandId === null ? '' : `brandId=${brandId}`}`
+    `${apiBaseUrl}/products${brandId === null ? '' : `?brandId=${brandId}`}`
   );
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();
+  return data;
+}
+
+export async function fetchPopularProducts({
+  brandId,
+  categoryId,
+}: {
+  brandId: string | null;
+  categoryId: number | null;
+}): Promise<ProductResponse[]> {
+  const queryString = brandId
+    ? `?brandId=${brandId}`
+    : categoryId !== null
+    ? `?categoryId=${categoryId}`
+    : '';
+  const response = await fetch(`${apiBaseUrl}/products/popular${queryString}`);
 
   if (!response.ok) {
     throw new Error('Network response was not ok');

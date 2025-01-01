@@ -1,7 +1,6 @@
 import PopularProducts from '@/components/popular-product';
 import ProductCard from '@/components/product';
-import { BrandResponse } from '@/lib/api';
-import { products } from '@/lib/data';
+import { fetchBrandById, fetchPopularProducts, fetchProducts } from '@/lib/api';
 import Link from 'next/link';
 
 export default async function Page({
@@ -10,16 +9,17 @@ export default async function Page({
   params: Promise<{ brandId: string }>;
 }) {
   const brandId = (await params).brandId;
-  const brand: BrandResponse = {
-    id: 1,
-    name: '메가MGC커피',
-    imageUrl: '',
-  };
+  const brand = await fetchBrandById(brandId);
+  const popularProducts = await fetchPopularProducts({
+    brandId,
+    categoryId: null,
+  });
+  const products = await fetchProducts(brandId);
 
   return (
     <div>
       <div>{brand.name}</div>
-      <PopularProducts name={brand.name} products={products} />
+      <PopularProducts name={brand.name} products={popularProducts} />
       <div>
         <div>전체 상품</div>
         <div className="grid grid-cols-2">

@@ -56,22 +56,22 @@ import { ProductDetailResponse, ProductResponse } from './api';
 //   },
 // ];
 
-const products: ProductResponse[] = [
-  {
-    id: 1,
-    imageUrl: '',
-    productName: '(ICE)아메리카노',
-    brandName: '메가MGC커피',
-    price: 2000,
-  },
-  {
-    id: 3,
-    imageUrl: '',
-    productName: '아메리카노(Ice)(TAKE-OUT)',
-    brandName: '컴포즈커피',
-    price: 1500,
-  },
-];
+// const products: ProductResponse[] = [
+//   {
+//     id: 1,
+//     imageUrl: '',
+//     productName: '(ICE)아메리카노',
+//     brandName: '메가MGC커피',
+//     price: 2000,
+//   },
+//   {
+//     id: 3,
+//     imageUrl: '',
+//     productName: '아메리카노(Ice)(TAKE-OUT)',
+//     brandName: '컴포즈커피',
+//     price: 1500,
+//   },
+// ];
 
 const product: ProductDetailResponse = {
   productId: 1,
@@ -94,4 +94,4 @@ const product: ProductDetailResponse = {
   expirationDays: 366,
 };
 
-export { products, product };
+export { product };

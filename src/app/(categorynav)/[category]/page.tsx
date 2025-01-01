@@ -1,7 +1,6 @@
 import BrandLinks from '@/components/brand-links';
 import PopularProducts from '@/components/popular-product';
-import { fetchBrands, fetchCategories } from '@/lib/api';
-import { products } from '@/lib/data';
+import { fetchBrands, fetchCategories, fetchPopularProducts } from '@/lib/api';
 
 export default async function Page({
   params,
@@ -9,11 +8,15 @@ export default async function Page({
   params: Promise<{ category: string }>;
 }) {
   const categorySlug = (await params).category;
-  const categoryName =
-    (await fetchCategories()).filter(
-      (category) => category.slug === categorySlug
-    )[0].name ?? '';
+  const category = (await fetchCategories()).filter(
+    (category) => category.slug === categorySlug
+  )[0];
+  const categoryName = category.name ?? '';
   const brands = await fetchBrands(categorySlug);
+  const products = await fetchPopularProducts({
+    brandId: null,
+    categoryId: category.id,
+  });
 
   return (
     <div>
